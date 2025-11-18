@@ -1,3 +1,4 @@
+import ResetButton from "../components/buttons/ResetButton";
 import { TodoForm } from "../components/TodoForm";
 import TodoList from "../components/TodoList";
 
@@ -7,8 +8,9 @@ export default function Home() {
       <h1 className="text-xl font-bold mb-4">All Tasks</h1>
       <div className="flex mb-4">
         <TodoForm />
+        <ResetButton />
       </div>
-      <TodoList id={"1"} name={"Default"} />
+      <TodoList />
     </div>
   );
 }

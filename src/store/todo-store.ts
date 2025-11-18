@@ -8,12 +8,13 @@ export interface TodoStore {
   editItem: (id: string, updatedItem: Partial<TodoListItemProps>) => void;
   toggleItemCompletion: (id: string, isComplete: boolean) => void;
   removeItem: (id: string) => void;
+  clearStore: () => void;
 }
 
 export const useTodoStore = create<TodoStore>()(
   devtools(
     persist(
-      (set, get) => ({
+      (set) => ({
         items: [],
         addItem: (text: string) => {
           if (text.trim().length < 3 || text.trim().length > 100) return;
@@ -76,6 +77,10 @@ export const useTodoStore = create<TodoStore>()(
             false,
             "removeItem",
           );
+        },
+        clearStore: () => {
+          set({ items: [] });
+          useTodoStore.persist.clearStorage();
         },
       }),
       {
