@@ -6,6 +6,7 @@ export const useEditItem = () => useStore((state) => state.editItem);
 export const useToggleItemCompletion = () =>
   useStore((state) => state.toggleItemCompletion);
 export const useRemoveItem = () => useStore((state) => state.removeItem);
+export const useClearStore = () => useStore((state) => state.clearStore);
 
 export const useCompletedCount = () =>
   useStore((state) => state.items.filter((item) => item.isComplete).length);
