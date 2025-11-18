@@ -3,13 +3,12 @@ import TodoList from "../components/TodoList";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <div>
-          <TodoForm />
-          <TodoList id={"1"} name={"Default"} />
-        </div>
-      </main>
+    <div className="max-w-md mx-auto mt-10 p-4 bg-white rounded-lg shadow-lg">
+      <h1 className="text-xl font-bold mb-4">All Tasks</h1>
+      <div className="flex mb-4">
+        <TodoForm />
+      </div>
+      <TodoList id={"1"} name={"Default"} />
     </div>
   );
 }
