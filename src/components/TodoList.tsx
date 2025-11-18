@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import { useItems } from "../hooks/useTodoStore";
 import TodoListItem from "./TodoListItem";
 
 interface TodoListProps {
@@ -8,10 +9,16 @@ interface TodoListProps {
 }
 
 const TodoList: React.FC<TodoListProps> = () => {
-  const [tasks, setTasks] = useState([
-    { id: "1", text: "test", isComplete: false },
-    { id: "2", text: "test2", isComplete: true },
-  ]);
+  const tasks = useItems();
+
+  if (tasks.length === 0) {
+    return (
+      <div className="emptyState">
+        <p>Empty List</p>
+      </div>
+    );
+  }
+
   return (
     <div className="list">
       {tasks.map((item) => (
