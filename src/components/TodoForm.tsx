@@ -20,11 +20,14 @@ export const TodoForm: React.FC = () => {
     <form onSubmit={handleSubmit} className="flex items-center">
       <input
         type="text"
-        className="flex-1 p-2 border rounded"
+        className="flex-1 p-2 border rounded invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Add new item"
+        minLength={3}
+        maxLength={100}
+        placeholder="Add new item (3-100 chars)"
         autoFocus
+        required
       />
       <AddButton />
     </form>
