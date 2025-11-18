@@ -17,8 +17,6 @@ export const useTodoStore = create<TodoStore>()(
       (set) => ({
         items: [],
         addItem: (text: string) => {
-          if (text.trim().length < 3 || text.trim().length > 100) return;
-
           const newTodo: TodoListItemProps = {
             id: crypto.randomUUID(),
             text: text.trim(),
@@ -34,13 +32,7 @@ export const useTodoStore = create<TodoStore>()(
           );
         },
         editItem: (id: string, updatedItem: Partial<TodoListItemProps>) => {
-          if (
-            !updatedItem.text ||
-            (updatedItem.text &&
-              (updatedItem.text.trim().length < 3 ||
-                updatedItem.text.trim().length > 100))
-          )
-            return;
+          if (!updatedItem.text) return;
 
           const newTodo: TodoListItemProps = {
             id: id,

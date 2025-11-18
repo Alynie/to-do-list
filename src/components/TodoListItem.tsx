@@ -46,21 +46,25 @@ const TodoListItem: React.FC<TodoListItemProps> = ({
           <form onSubmit={saveNewItem} className="flex items-center">
             <input
               type="text"
+              className="border rounded invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Edit item"
+              minLength={3}
+              maxLength={100}
+              placeholder="Edit item (3-100 chars)"
               autoFocus
+              required
             />
             <SaveButton />
           </form>
         ) : (
           <div className="flex items-center gap-4">
             <p
-              className={`flex-1 ${isComplete ? "line-through text-gray-500" : ""}`}
+              className={`flex-1 overflow-hidden break-all ${isComplete ? "line-through text-gray-500" : ""}`}
             >
               {text}
             </p>
-            <div className="flex overflow-hidden rtl:flex-row-reverse">
+            <div className="flex overflow-hidden">
               <EditButton onClick={() => setIsEditing(true)} />
               <DeleteButton onClick={() => removeItem(id)} />
             </div>
