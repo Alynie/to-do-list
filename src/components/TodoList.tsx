@@ -20,7 +20,7 @@ const TodoList: React.FC<TodoListProps> = ({ type = "all" }) => {
   return (
     <div className="max-w-md mx-auto mt-10 p-4 bg-white rounded-lg shadow-lg">
       <h1 className="text-xl font-bold mb-4">
-        {type.charAt(0).toUpperCase() + type.slice(1)} Tasks
+        {type.charAt(0).toUpperCase() + type.slice(1)} Tasks ({tasks.length})
       </h1>
       <div className="flex mb-4">
         <TodoForm type={type} />

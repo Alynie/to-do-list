@@ -1,5 +1,6 @@
 "use client";
-import { useClearStore } from "@/src/hooks/useTodoStore";
+import React from "react";
+import { useClearStore } from "../../hooks/useTodoStore";
 
 const ResetButton = () => {
   const clearStore = useClearStore();
