@@ -24,7 +24,7 @@ export const TodoForm: React.FC<TodoFormProps> = ({ type = "all" }) => {
     <form onSubmit={handleSubmit} className="flex items-center">
       <input
         type="text"
-        className="flex-1 p-2 border rounded invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
+        className="flex-1 p-2 border rounded invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 placeholder-gray-500"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         minLength={3}

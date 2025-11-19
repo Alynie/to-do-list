@@ -14,7 +14,22 @@ Requirements:
 
 ## Notes
 
-I used NextJs because I wanted something that I could spin up very quickly. Additional bonuses were that I don't have to spend a lot of time setting up the routing and it deploys easily with Vercel. I added eslint and prettier for general good habits and debated adding JsDocs, but for a project this small, I opted to instead make sure that the names are easy enough to understand without comments or annotations. I used Tailwind for styling because I wanted something simple and quick for a small number of components. I used Zustand for state management because it is more robust and maintainable than just keeping track with localstorage alone, this allowed me to create reusable hooks and if the project were to grow, I could add slices to keep it all organized and manageable. Zustand was also really quick and easy to throw in instead of setting up redux or something similar. It also allowed me to save to localStorage neatly. I added a `Clear All` button to allow the use to store the list and it also clears the localStorage as well since that never gets cleared unless it is done manually. I added validation for the to-do items by utilizing the existing capabilities of form validation and used tailwind to help add a little styling to that. I also added unit tests to cover the basic functionality. I also added ids to the to-do items to allow for adding duplicate items without collision.
+- I used NextJs because I wanted something that I could spin up very quickly.
+  - Additional bonuses were that I don't have to spend a lot of time setting up the routing and it deploys easily with Vercel.
+- I added eslint and prettier for general good habits
+  - debated adding JsDocs, but for a project this small, I opted to instead make sure that the names are easy enough to understand without comments or annotations
+- I used Tailwind for styling because I wanted something simple and quick for a small number of components.
+- I used Zustand for state management because it is more robust and maintainable than just keeping track with localstorage alone
+  - this allowed me to create reusable hooks and if the project were to grow, I could add slices to keep it all organized and manageable
+  - Zustand was also really quick and easy to throw in instead of setting up redux or something similar
+- I added a `Clear All` button to allow the user to reset the list
+  - It also clears the localStorage as well since that never gets cleared unless it is done manually
+- I added validation for the to-do items by utilizing the existing capabilities of form validation
+  - used tailwind to help add a little styling to that
+  - validation is also in the edit form
+- I added unit tests to cover the basic functionality
+- I added ids to the to-do items to allow for adding duplicate items without collision
+- sorted completed tasks to the bottom of the all tasks list
 
 App is hosted at https://to-do-list-theta-drab.vercel.app/
 
