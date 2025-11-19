@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { useAddItem } from "../hooks/useTodoStore";
 import { AddButton } from "./buttons";
 
-export const TodoForm: React.FC = () => {
+interface TodoFormProps {
+  type?: "all" | "active" | "completed";
+}
+
+export const TodoForm: React.FC<TodoFormProps> = ({ type = "all" }) => {
   const [inputValue, setInputValue] = useState("");
   const addItem = useAddItem();
 
@@ -11,7 +15,7 @@ export const TodoForm: React.FC = () => {
     e.preventDefault();
 
     if (inputValue.trim()) {
-      addItem(inputValue);
+      addItem(inputValue, type === "completed");
       setInputValue("");
     }
   };

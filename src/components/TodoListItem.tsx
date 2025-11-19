@@ -51,7 +51,7 @@ const TodoListItem: React.FC<TodoListItemProps> = ({
               onChange={(e) => setInputValue(e.target.value)}
               minLength={3}
               maxLength={100}
-              placeholder="Edit item (3-100 chars)"
+              placeholder={text}
               autoFocus
               required
             />
