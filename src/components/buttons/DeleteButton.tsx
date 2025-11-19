@@ -1,8 +1,11 @@
+import React from "react";
+
 const DeleteButton = ({ onClick }: { onClick: () => void }) => {
   return (
     <button
       className="px-4 py-2 transition-colors duration-200 sm:px-6 stroke-gray-700 hover:stroke-red-500"
       onClick={onClick}
+      aria-label="Delete"
     >
       <svg
         className="w-6 h-6"
