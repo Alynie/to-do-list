@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# To-Do List App
 
 ## Getting Started
 
-First, run the development server:
+Requirements:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Use React with TypeScript
+- Allow the user to create, edit, complete and remove to-do list items
+- To-do items are a string with a minimum of 3 chars, max 100 chars
+- Persist to-do list items between sessions (localStorage)
+- Use whichever CSS styling method you’re most familiar with to design the app
+- Bonus: Write unit tests that cover key application functionality
+- Bonus: Display a list of completed to-do items on a separate page
+
+## Notes
+
+I used NextJs because I wanted something that I could spin up very quickly. Additional bonuses were that I don't have to spend a lot of time setting up the routing and it deploys easily with Vercel. I added eslint and prettier for general good habits and debated adding JsDocs, but for a project this small, I opted to instead make sure that the names are easy enough to understand without comments or annotations. I used Tailwind for styling because I wanted something simple and quick for a small number of components. I used Zustand for state management because it is more robust and maintainable than just keeping track with localstorage alone, this allowed me to create reusable hooks and if the project were to grow, I could add slices to keep it all organized and manageable. Zustand was also really quick and easy to throw in instead of setting up redux or something similar. It also allowed me to save to localStorage neatly. I added a `Clear All` button to allow the use to store the list and it also clears the localStorage as well since that never gets cleared unless it is done manually. I added validation for the to-do items by utilizing the existing capabilities of form validation and used tailwind to help add a little styling to that. I also added unit tests to cover the basic functionality. I also added ids to the to-do items to allow for adding duplicate items without collision.
+
+App is hosted at https://to-do-list-theta-drab.vercel.app/
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18+, I used v24.11.1)
+- [pnpm](https://pnpm.io/)
+
+### Installation
+
+```sh
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the App
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Start the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+pnpm dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+### Building for Production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+pnpm build
+pnpm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Linting
 
-## Deploy on Vercel
+Check code style and catch errors:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+pnpm lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Formatting
+
+Check formatting:
+
+```sh
+pnpm format
+```
+
+Auto-fix formatting:
+
+```sh
+pnpm format:fix
+```
+
+### Testing
+
+Run all unit tests:
+
+```sh
+pnpm test
+```
+
+Test coverage reports are generated in the `coverage/` directory.
+
+## Tech Stack
+
+- [Vercel](https://vercel.com/docs)
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [Jest](https://jestjs.io/) & [Testing Library](https://testing-library.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/)
