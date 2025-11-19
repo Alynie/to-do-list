@@ -4,7 +4,7 @@ import { TodoListItemProps } from "../components/TodoListItem";
 
 export interface TodoStore {
   items: TodoListItemProps[];
-  addItem: (text: string) => void;
+  addItem: (text: string, isComplete: boolean) => void;
   editItem: (id: string, updatedItem: Partial<TodoListItemProps>) => void;
   toggleItemCompletion: (id: string, isComplete: boolean) => void;
   removeItem: (id: string) => void;
@@ -16,11 +16,11 @@ export const useTodoStore = create<TodoStore>()(
     persist(
       (set) => ({
         items: [],
-        addItem: (text: string) => {
+        addItem: (text: string, isComplete: boolean) => {
           const newTodo: TodoListItemProps = {
             id: crypto.randomUUID(),
             text: text.trim(),
-            isComplete: false,
+            isComplete: isComplete,
           };
 
           set(

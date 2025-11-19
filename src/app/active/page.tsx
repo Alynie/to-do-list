@@ -1,9 +1,9 @@
 import TodoList from "@/src/components/TodoList";
 
-export default function Completed() {
+export default function Active() {
   return (
     <div className="">
-      <TodoList type="completed" />
+      <TodoList type="active" />
     </div>
   );
 }
