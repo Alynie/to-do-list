@@ -46,7 +46,7 @@ const TodoListItem: React.FC<TodoListItemProps> = ({
           <form onSubmit={saveNewItem} className="flex items-center">
             <input
               type="text"
-              className="border rounded invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
+              className="border rounded invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 placeholder-gray-500"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               minLength={3}
@@ -60,7 +60,7 @@ const TodoListItem: React.FC<TodoListItemProps> = ({
         ) : (
           <div className="flex items-center gap-4">
             <p
-              className={`flex-1 overflow-hidden break-all ${isComplete ? "line-through text-gray-500" : ""}`}
+              className={`flex-1 overflow-hidden break-all ${isComplete ? "line-through text-gray-500" : "text-gray-900"}`}
             >
               {text}
             </p>
